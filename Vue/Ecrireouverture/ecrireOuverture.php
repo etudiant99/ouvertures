@@ -1,9 +1,10 @@
 <?php
 require_once 'Modele/Echiquier.php';
 $echiquier = new Echiquier;
-
+$titre = 'Ouverture: '.$nomouverture;
 ?>
-<h2><?= $nomouverture; ?></h2>
+<h2><?= $titre; ?></h2>
+<h5><?php echo '['.$nomtype.']'; ?></h5>
 <br />
 
 <div class="titre">

@@ -14,6 +14,8 @@ class ControleurEcrireouverture extends Controleur
     public function ecrireouverture()
     {
         $idtype = $this->requete->getParametre("type");
+        $type = $this->ouvertures->getType($idtype);
+        $nomtype = $type->getType();
         $nomouverture = $this->requete->getParametre("ouverture");
         
         if (isset($_GET['lecoup']))
@@ -81,6 +83,7 @@ class ControleurEcrireouverture extends Controleur
 
         $this->genererVue(array('idtype' => $idtype,
         'flip' => $flip,
+        'nomtype' => $nomtype,
         'couleur' => $couleur,
         'start' => $start,
         'end' => $end,
