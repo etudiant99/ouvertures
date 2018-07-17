@@ -14,8 +14,13 @@ class ControleurNouvellevariante extends Controleur
         $idouverture = $this->requete->getParametre("ouverture");
         
         $ouvertures = $this->ouvertures->getToutesOuvertures();
-          
+        $ouverture = $this->ouvertures->get($idouverture);
+        $nomouverture = $ouverture->getOuverture();
+        $typeouverture = $ouverture->getType();
+        
         $this->genererVue(array('ouvertures' => $ouvertures,
+                                'nomouverture' => $nomouverture,
+                                'typeouverture' => $typeouverture,
                                 'idouverture' => $idouverture));
     }
 }

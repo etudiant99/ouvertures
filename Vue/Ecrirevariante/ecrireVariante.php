@@ -13,9 +13,10 @@ else
     $start = -1;
     $end = -1;
 }
-
+$titre = 'Variante: '.$nomvariante;
 ?>
-<h2><?= $nomvariante ?></h2>
+<h3><?= $nomouverture ?></h3>
+<h5><?= $titre ?></h5>
 <br />
 
 <div class="titre">

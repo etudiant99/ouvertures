@@ -13,6 +13,8 @@ class ControleurEcrirevariante extends Controleur
     {
         $idouverture = $this->requete->getParametre("ouverture");
         $nomvariante = $this->requete->getParametre("variante");
+        $ouverture = $this->ouvertures->get($idouverture);
+        $nomouverture = $ouverture->getOuverture();
         $ouverture = '';
         
     if (isset($_GET['lecoup']))
@@ -76,7 +78,7 @@ class ControleurEcrirevariante extends Controleur
     }
 
         $this->genererVue(array(
-            'ouverture' => $ouverture,
+            'nomouverture' => $nomouverture,
             'couleur' => $couleur,
             'position' => $position,
             'ignouverture' => $ignouverture,
